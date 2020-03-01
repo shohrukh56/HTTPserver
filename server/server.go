@@ -72,7 +72,7 @@ func handleConnection(conn net.Conn) {
 	}
 	meth, request, protocol := split[0], split[1], split[2]
 	if meth == "GET" && protocol == "HTTP/1.1" {
-		AnswerToHttp(request, conn)
+		ResponseToHttp(request, conn)
 	}
 
 }

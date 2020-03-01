@@ -24,7 +24,7 @@ func Init() {
 	ContentType["pdf"] = "Content-Type: application/pdf\r\n"
 	ContentType["jpg?download"] = "Content-Disposition: attachment; filename=down.jpg\r\n"
 }
-func AnswerToHttp(http string, conn net.Conn) {
+func ResponseToHttp(http string, conn net.Conn) {
 	var index string
 	download := ""
 	var file string
@@ -55,7 +55,7 @@ func AnswerToHttp(http string, conn net.Conn) {
 	}
 	index += download
 	if file == "" {
-		file = "index.html"
+		file = "commands.html"
 	}
 
 	all, err := ioutil.ReadFile(file)
